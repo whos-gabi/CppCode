@@ -1,0 +1,2 @@
+
+    prelucrare(s);
