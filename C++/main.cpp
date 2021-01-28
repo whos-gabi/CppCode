@@ -6,70 +6,68 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+//d
+char s[251]="texttestidkitssus", ch='t';
+
 /*
-se da un vector de vr intregi care sunt rotunde si au cifrele <= 5
-sa se rotunjeasca nr
-
-atunci cand este convertit in baza 2 nr de rest 0 = nr de rest 1
-ex:
- 12(1100)
- 13(1101)
- 678 -INCORECT 
+returnează cea mai din stânga 
+poziție unde se găsește ch în șir, 
+sau returnează -1 dacă ch nu apare în șir.
 */
-
-int v[101], a[101], i, j, n, m;
-void citire()
-{
-    cin >> n;
-    for (int i = 1; i <= n; i++)
-        cin >> v[i];
-}
-bool conversie(int x)
-{
-    int r, nr0, nr1;
-    nr0 = nr1 = 0;
-    while (x)
-    {
-        r = x % 2;
-        if (r == 1)
-            nr1++;
-        else
-            nr0++;
-        x /= 2;
+int IndexOf(char s[], char ch){
+    if(!strchr(s,ch)){
+        return -1;
     }
-
-    return nr0==nr1;
-}
-bool cifre(int x)
-{
-    int c;
-    while (x)
-    {
-        c = x % 10;
-        if (c > 5)
-            return 0;
-        x /= 10;
-    }
-    return 1;
-}
-
-void formare(int v[], int n, int a[], int &m){
-    m=0;
-    for(int i=1; i<=n; i++){
-        if(cifre(v[i]) && conversie(v[i])){
-            a[++m]=v[i];
+    int x=strlen(s);
+    for(int i=0;i<=x;i++){
+        if(s[i]==ch){
+            return i;
         }
     }
+    return -1;
 }
-
-void afis(int a[], int m){
-    for(int i=1; i<=m; i++){
-        cout<<a[i]<<" ";
+/*
+returnează cea mai din dreapta poziție
+ unde se găsește ch în șir, 
+ sau returnează -1 dacă ch nu apare în șir.
+*/
+int LastIndexOf(char s[], char ch){
+    if(!strchr(s,ch)){
+        return -1;
     }
+    int x=strlen(s),k=0;
+    for(int i=x;i>=0;i--){
+        k++;
+        if(s[i]==ch){
+            return k;
+        }
+    }
+    return -1;
+}
+/*
+1 ≤ k ≤ n, funcția returnează poziția 
+unde caracterul ch apare a k-a oară.
+ În caz contrar, funcția returnează -1.
+*/
+int NthIndex(char s[], char ch, int k){
+    if(!strchr(s,ch)){
+        return -1;
+    }
+    int x=strlen(s);
+    for(int i=0;i<=x;i++){
+        if(s[i]==ch && k==i){
+            return i;
+        }else{
+            return -1;
+        }  
+    }
+    return -1;
 }
 
 int main(){
-    citire();
-    formare()
+    //test 
+    cout<<NthIndex(s,ch,60)<<'\n';
+    cout<<LastIndexOf("okokokqwer",'k')<<'\n';
+    cout<<IndexOf("justtest",'t')<<'\n';
     return 0;
 }
