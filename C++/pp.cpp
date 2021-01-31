@@ -66,14 +66,6 @@ int checkID(int id){
 }
 
 int main(){
-    string FstM,ScndM,Drink;
-    int n;
-    cout<<"Enter your order:\n";
-    cout<<"First enter your first meal name:\n";
-    cin>>FstM;
-    cout<<"Enter your second meal name:\n";
-    cin>>ScntM;
-    
     meal.burger.price = 12.5;
     cout<< meal.burger.price<<'\n';
     cout<< meal.burger.getID()<<endl;
