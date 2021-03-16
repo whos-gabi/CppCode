@@ -7,12 +7,9 @@
 
 using namespace std;
 
-//recursive problem
-//c++ algoritms and data structures sucks
-
-
 int main()
 {
     //TODO
+    cout<<"Hi bro";
     return 0;
 }
