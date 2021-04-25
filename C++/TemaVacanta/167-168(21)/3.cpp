@@ -2,18 +2,10 @@
 //
 using namespace std;
 //
-void citire(){
-
-}
-
-void prelucrare(){
-
-}
+// calculati suma 
 
 int main()
 {
-    citire();
-    prelucrare();
-
+    //TODO
     return 0;
 }

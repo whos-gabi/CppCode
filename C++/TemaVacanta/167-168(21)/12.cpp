@@ -2,18 +2,19 @@
 //
 using namespace std;
 //
-void citire(){
 
+void citire()
+{
 }
 
-void prelucrare(){
-
+void prelucrare()
+{
 }
 
 int main()
 {
+
     citire();
     prelucrare();
-
     return 0;
 }
