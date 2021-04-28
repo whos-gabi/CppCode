@@ -23,37 +23,6 @@ void citire()
     }
 }
 
-// bool par(int k)
-// {
-//     if (k % 2 == 0)
-//     {
-//         return 1;
-//     }
-//     else
-//     {
-//         return 0;
-//     }
-// }
-
-// bool colPar(int n,int j){
-//     for (int i = 0; i <=n; i++)
-//     {
-//         if(!par(v[i][j])){
-//             return 0;
-//         }
-//     }
-//     return 1;
-// }
-
-// bool rowPar(int m,int j){
-//     for (int i = 0; i <=m; i++)
-//     {
-//         if(!par(v[j][i])){
-//             return 0;
-//         }
-//     }
-//     return 1;
-// }
 
 bool rowCresc(int n, int j)
 {
