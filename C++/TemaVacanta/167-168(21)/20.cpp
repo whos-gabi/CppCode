@@ -56,11 +56,13 @@ void prelucrare()
             k++;
         }
     }
+
     //test
     for (int i = 0; i < n + m; i++)
     {
         cout << z[i];
     }
+    
     //bool sort
     //eliminarea nr negative
 }
