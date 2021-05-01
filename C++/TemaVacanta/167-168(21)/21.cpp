@@ -67,14 +67,18 @@ void prelucrare(int nr_p, int nr_i, int par[], int imp[])
             nr_i++;
         }
     }
-     cout << "sortare si afisare nr pare\n";
+
+    cout << "sortare si afisare nr pare\n";
+    
     bubbleSort(par, nr_p);
     for (int i = 0; i < nr_p; i++)
     {
         cout << par[i];
     }
+
     cout<<endl;
     cout << "sortare si afisare nr impare\n";
+
     bubbleSort(imp, nr_i);
     for (int i = 0; i < nr_i; i++)
     {
