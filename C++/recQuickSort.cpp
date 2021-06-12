@@ -1,48 +1,48 @@
 #include <iostream>
 using namespace std;
-int n,v[101];
+int n, v[101];
 void citire()
 {
-    cin>>n;
-    for(int i=1;i<=n;i++)
-        cin>>v[i];
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> v[i];
 }
-void divizeaza(int st,int dr, int &mij)
+void divizeaza(int st, int dr, int &mij)
 {
-    int i,j,pi=0,pj=1;
-    i=st;
-    j=dr;
-    while(i<j)
+    int i, j, pi = 0, pj = 1;
+    i = st;
+    j = dr;
+    while (i < j)
     {
-        if(v[i]>v[j])
+        if (v[i] > v[j])
         {
-            swap(v[i],v[j]);
-            swap(pi,pj);
+            swap(v[i], v[j]);
+            swap(pi, pj);
         }
-        i=i+pi;
-        j=j-pj;
+        i = i + pi;
+        j = j - pj;
     }
-    mij=i;
+    mij = i;
 }
 void quicksort(int st, int dr)
 {
     int mij;
-    if(st<dr)
+    if (st < dr)
     {
-        divizeaza(st,dr,mij);
-        quicksort(st,mij-1);
-        quicksort(mij+1,dr);
+        divizeaza(st, dr, mij);
+        quicksort(st, mij - 1);
+        quicksort(mij + 1, dr);
     }
 }
 void afis()
 {
-    for(int i=1;i<=n;i++)
-        cout<<v[i]<<" ";
+    for (int i = 1; i <= n; i++)
+        cout << v[i] << " ";
 }
 int main()
 {
     citire();
-    quicksort(1,n);
+    quicksort(1, n);
     afis();
     return 0;
 }

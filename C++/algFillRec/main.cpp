@@ -3,7 +3,7 @@
 #include <cmath>
 #include <string>
 #include <fstream>
-#include <bits/stdc++.h>
+
 /*Algoritmul fill (nu se cere la bac)*/
 using namespace std;
 
@@ -34,26 +34,26 @@ k=0 ll=1+0=1; cc=3+(-1)=2
 ...............
 **/
 void fill(int l, int c)
-{   //ll = linie, cc= coloana
+{ //ll = linie, cc= coloana
     int ll, cc;
     //functia fill umple tot "teritoriul" cu 0
     a[l][c] = 0;
     //functia merge in toate directiile posibile
-    //si se reapeleaza, eventual umple tot "teritoriul" cu 0 
+    //si se reapeleaza, eventual umple tot "teritoriul" cu 0
     for (int k = 0; k <= 3; k++)
-    {   
-        //seteaza linia si coloana curenta sa fie egala 
+    {
+        //seteaza linia si coloana curenta sa fie egala
         //cu un teritoriu din apropiere
         /* 
             1
           1 0 1
             1        
-        */ 
+        */
         ll = l + dl[k];
         cc = c + dc[k];
 
         if (a[ll][cc])
-            fill(ll, cc);//partea recursiva
+            fill(ll, cc); //partea recursiva
     }
 }
 
@@ -61,9 +61,9 @@ int main()
 {
     f >> n >> m;
     // citirea coloanelor si randurilor matricei
-    
+
     int i, j;
-    //for-ul citeste matricea 
+    //for-ul citeste matricea
     for (i = 1; i <= n; i++)
         for (j = 1; j <= m; j++)
             f >> a[i][j];
@@ -79,9 +79,9 @@ int main()
                 nr++;
                 fill(i, j);
             }
-    // se scrie nr in fisier si se inchide fisierul            
+    // se scrie nr in fisier si se inchide fisierul
     g << nr;
     g.close();
-    
+
     return 0;
 }
