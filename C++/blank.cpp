@@ -8,7 +8,7 @@
 using namespace std;
 //
 void citire(){
-
+ cout<<"fsdfsd";
 }
 
 void prelucrare(){
