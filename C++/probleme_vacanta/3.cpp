@@ -8,34 +8,28 @@ using namespace std;
 
 //prod cif impare intrun numar
 
-int nr, p=1;
+int nr, nnr;
 
 void citire()
 {
     cin >> nr;
 }
 
-int imPar(int k){
-    return k%2!=0;
-}
-
-int prelucrare(int nr,int &p)
+int prelucrare(int nr,int &nnr)
 {
     int n = nr, uc;
-    while(n!=0){  
+    while(n!=0){
         uc=n%10;
-        if(imPar(uc)){
-            p*=uc;
-        }
+        nnr++;
         n /= 10;
     }
-    return p;
+    return nnr;
 }
 
 int main()
 {
     citire();
-    cout<<prelucrare(nr,p);
+    cout<<prelucrare(nr,nnr);
 
     return 0;
 }
