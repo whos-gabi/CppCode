@@ -39,7 +39,7 @@ int prelucrare(int nr, int &p)
     }
     else
     {
-        return p;
+    return p;
     }
 }
 
