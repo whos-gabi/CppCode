@@ -6,7 +6,12 @@
 
 using namespace std;
 
-int nr, big;
+int nr, big, flag = 0;
+
+int par(int k)
+{
+    return k % 2 == 0;
+}
 
 int main()
 {
@@ -15,12 +20,46 @@ int main()
     while (n != 0)
     {
         uc = n % 10;
-        if (uc >= big)
+        if (par(uc))
         {
-            big = uc;
+            flag++;
+            if (uc > big)
+            {
+                big = uc;
+            }
         }
         n /= 10;
     }
-    cout << big;
+    if (flag==0)
+    {
+        cout << "10";
+    }
+    else
+    {
+        cout << big;
+    }
     return 0;
 }
+
+/*
+better soution 
+#include<iostream>
+
+using namespace std;
+
+int main(){
+   int n, c=-1;
+   cin>>n;
+   do{
+       if(n%10>c&&n%10%2==0)
+           c=n%10;
+       n/=10;
+   }while(n!=0);
+   if(c==-1)
+       cout<<10;
+   else
+       cout<<c;
+   return 0;
+}
+
+*/
