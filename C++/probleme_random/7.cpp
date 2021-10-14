@@ -1,29 +1,44 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-//produs cartezian backtracking iterativ
+//broken problema
 int a[20][30], x[101], v[101], n, k;
 
 void citire()
 {
     cin >> n;
-    for (int i = 1; i <= n; i++)
+}
+
+bool cond(int k)
+{
+    for (int i = 1; i < k; i++)
     {
-        cin >> v[i];
-        for (int j = 1; j <= v[i]; j++)
+        if (x[i] == x[k] || abs(x[k] - x[i]) == abs(k - 1))
         {
-            cin >> a[i][j];
+            return 0;
         }
     }
+    return 1;
 }
 
 void afis()
 {
     for (int i = 1; i <= n; i++)
     {
-        cout << a[i][x[i]] << ' ';
+        for (int j = 1; j <= n; j++)
+        {
+            if (x[i] == j)
+            {
+                cout << " D ";
+            }
+            else
+            {
+                cout << " * ";
+            }
+            cout << '\n';
+        }
     }
-    cout<<endl;
 }
 
 void backt()
@@ -35,13 +50,16 @@ void backt()
         while (x[k] < v[k])
         {
             x[k]++;
-            if (x[k] == n)
+            if (cond(k))
             {
-                afis();
-            }
-            else
-            {
-                x[++k] = 0;
+                if (x[k] == n)
+                {
+                    afis();
+                }
+                else
+                {
+                    x[++k] = 0;
+                }
             }
         }
         k--;
