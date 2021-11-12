@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-//backtracking combinari de bancnote
 
 int x[101], v[101], s, n, k;
 
@@ -14,19 +13,6 @@ void citire()
     cin >> s;
 }
 
-int suma(int k)
-{
-    int sum = 0;
-    for (int i = 1; i <= k; i++)
-    {
-        sum = sum + x[i] * v[i];
-    }
-    return sum;
-}
-bool verif(int k)
-{
-    return suma(k) == s;
-}
 
 void afis(int k)
 {
@@ -44,20 +30,16 @@ void afis(int k)
 
 void bkt(int k)
 {
-    for (int i = 0; i <= s / v[k]; i++)
+    for (int i = 0; i <= k; i++)
     {
         x[k] = i;
-        if (suma(k) <= s)
+        if(!p[i]) 
         {
-            if (k == n)
-            {
-                if (verif(k))
-                    afis(k);
-            }
-            else
-            {
-                bkt(k + 1);
-            }
+            x[k] = i;
+            p[i] = 1;
+            if(k == n) afisare();
+            else back(k + 1);
+            p[i] = 0;
         }
     }
 }
