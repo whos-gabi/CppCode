@@ -8,7 +8,7 @@ ofstream g("out_bancnote.out");
 
 //var
 int nr_banc, v[100], S, sol[100], ord[100], aux;
-//buggy aux, greedy, afis
+//buggy aux, greedy, afi
 void citire()
 {
     f >> S;       //citire suma
@@ -17,6 +17,7 @@ void citire()
     {
         f >> v[i];
     }
+    aux = S;
 }
 
 void ordonare()
