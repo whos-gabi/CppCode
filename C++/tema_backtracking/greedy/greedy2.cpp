@@ -1,3 +1,7 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
 /**
  * intr-un rucsac se pot transporta maxim
  * G - kg
@@ -12,4 +16,11 @@
  *    3       4  10  2,5
  *    4       8  10  1,25
  *    5      10  22  2,2
- * /
+ **/
+
+
+
+int main(){
+
+    return 0;
+}
