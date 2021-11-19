@@ -45,7 +45,7 @@ void greedy()
             j++;
             sol[j] = S / v[i];
             S = S - v[i] * sol[j];
-            ord[j];
+            ord[j]=i;//??
         }
         i++;
     }
@@ -53,11 +53,11 @@ void greedy()
 
 void afis(int S)
 {
-    cout << "SUMA " << S << " = ";
+    cout << "SUMA " << S << " =\n";
     for (int i = 1; i <= nr_banc; i++)
     {
         /* code */
-        cout << sol[i] << " bancnote " << v[ord[i]] << endl;
+        cout << sol[i] << " bancnote de " << v[i] <<" = "<<sol[i]*v[i]<<endl;
     }
 }
 
@@ -66,5 +66,6 @@ int main()
     citire();
     ordonare();
     greedy();
+    afis(aux);
     return 0;
 }
