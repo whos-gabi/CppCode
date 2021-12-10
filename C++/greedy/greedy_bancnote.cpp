@@ -8,7 +8,7 @@ ofstream g("out_bancnote.out");
 
 //var
 int nr_banc, v[100], S, sol[100], ord[100], aux;
-//buggy aux, greedy, afi
+
 void citire()
 {
     f >> S;       //citire suma
@@ -33,6 +33,12 @@ void ordonare()
             }
         }
     }
+    //afis v
+    // cout << "vect bancnote ordonat\n";
+    // for (int i = 1; i <= nr_banc; i++)
+    // {
+    //     cout << i << " | " << v[i]<<endl;
+    // }
 }
 
 void greedy()
@@ -40,24 +46,40 @@ void greedy()
     int i = 1, j = 0;
     while (S != 0 && i <= nr_banc)
     {
-        if (S > v[i])
+        if (S >= v[i])
         {
             j++;
             sol[j] = S / v[i];
             S = S - v[i] * sol[j];
-            ord[j]=i;//??
+            ord[j] = i;
         }
         i++;
     }
 }
 
+int sumelem(int v[100])
+{
+    int sum;
+    for (int i = 1; i <= nr_banc; i++)
+    {
+        sum += v[i];
+    }
+}
+
 void afis(int S)
 {
+    int pos_sol[100];
     cout << "SUMA " << S << " =\n";
     for (int i = 1; i <= nr_banc; i++)
     {
         /* code */
-        cout << sol[i] << " bancnote de " << v[i] <<" = "<<sol[i]*v[i]<<endl;
+        pos_sol[i] = sol[i] * v[i];
+        cout << sol[i] << " bancnote de " << v[i] << " = " << sol[i] * v[i] << endl;
+    }
+    if(sumelem(pos_sol)==S){
+        cout<<"AM GASIT SOLUTIA\n";
+    }else{
+        cout<<"NU AM GASIT SOLUTIA\n";
     }
 }
 
