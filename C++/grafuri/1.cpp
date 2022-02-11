@@ -34,10 +34,10 @@ void citire_mi()
     for (int j = 1; j <= m; j++)
     {
         m_in >> x >> y;
-        inc[x][j] = 1;
-        inc[y][j] = 1;
+        inc[x][j] = inc[y][j] = 1;
     }
 }
+
 // afis matrice de incidenta
 void afis_mi()
 {
