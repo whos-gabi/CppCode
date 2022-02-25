@@ -1,41 +1,39 @@
 #include <fstream>
+
 using namespace std;
 
 ifstream f("ciclu.in");
 ofstream g("ciclu.out");
 
-int n,m, a[105][105], viz[205], p, ok = 0;
-int i, j;
+int n, a[105][105], x[205], p, k = 0;
 
 void afis(int k)
 {
     for (int i = 1; i <= k; ++i)
-        g << viz[i] << " ";
+        g << x[i] << " ";
     g << p << " ";
-    ok = 1;
+    k = 1;
 }
 
-bool cond(int k)
+int cond(int k)
 {
-    if (a[viz[k - 1]][viz[k]] != 1)
-        return false;
+    if (a[x[k - 1]][x[k]] != 1)
+        return 0;
     for (int i = 1; i < k; ++i)
-        if (viz[k] == viz[i])
-            return false;
-    return true;
+        if (x[k] == x[i])
+            return 0;
+    return 1;
 }
 
 void back(int k)
 {
-    //
-    for (int i = 1; i <= n && !ok; ++i)
+    for (int i = 1; i <= n && !k; ++i)
     {
-        viz[k] = i;
+        x[k] = i;
         if (cond(k))
         {
-            if (a[viz[k]][p] == 1 && k > 2){
+            if (a[x[k]][p] == 1 && k > 2)
                 afis(k);
-            }
             back(k + 1);
         }
     }
@@ -43,28 +41,21 @@ void back(int k)
 
 void citire()
 {
-    // f >> n >> m;
-    // while (m > 0)
-    // {
-        
-    //     a[i][j] = a[j][i] = 1;
-    //     m--;
-    // }
-    // f >> p;
-    
+    int i, j, m;
     f >> n >> m;
-    while (f >> i >> j)
+    while (m > 0)
     {
+        f >> i >> j;
         a[i][j] = a[j][i] = 1;
+        m--;
     }
     f >> p;
-    
 }
 
 int main()
 {
     citire();
-    viz[1] = p;
+    x[1] = p;
     back(2);
     return 0;
 }
