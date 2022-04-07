@@ -1,8 +1,17 @@
 #include <iostream>
+#include <cstring>
 //
 using namespace std;
-// 4 c
-int x = 4;
+// 
+//a DAN MORIS; DANILA PREPELEAC; DAN POPA; EDANA DAN;
+char a[1001];
+
+void find(x[101]){
+    //loop thrue array get one name 
+    //eg DAN MARIS;
+    
+
+}
 
 int main()
 {
