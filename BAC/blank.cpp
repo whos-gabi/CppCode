@@ -7,18 +7,23 @@
 //
 using namespace std;
 //
-void citire(){
 
+void citire(){
 }
 
-void prelucrare(){
+void prelucrare()
+{
+}
 
+void afis()
+{
+    cout << "Hello world!" << endl;
 }
 
 int main()
 {
     citire();
     prelucrare();
-
+    afis();
     return 0;
 }
