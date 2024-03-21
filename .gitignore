@@ -1,4 +1,10 @@
 *.exe
 tempCodeRunnerFile.cpp
 .vscode
+.DS_Store
+#ignore folders with .dSYM in the name
+
 *.txt
+*
+!/**/
+!*.*

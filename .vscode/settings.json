@@ -1,0 +1,41 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "*.s": "m68k",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "istream": "cpp",
+        "random": "cpp",
+        "iomanip": "cpp",
+        "array": "cpp",
+        "locale": "cpp",
+        "memory": "cpp",
+        "tuple": "cpp",
+        "variant": "cpp",
+        "cstring": "cpp",
+        "cmath": "cpp",
+        "new": "cpp",
+        "__config": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#5bd75b",
+        "activityBar.background": "#5bd75b",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#6565d9",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#5bd75b",
+        "statusBar.background": "#32cd32",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#28a428",
+        "statusBarItem.remoteBackground": "#32cd32",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#32cd32",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#32cd3299",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#32cd32"
+}
